@@ -1,3 +1,15 @@
 .profile {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 50px;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    margin: 0 0 36px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
