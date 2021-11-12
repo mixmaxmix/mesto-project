@@ -23,9 +23,8 @@
 
 /* elements section */
 @import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/elements__list/elements__list.css);
 
-/* elements-list section */
-@import url(../blocks/elements-list/elements-list.css);
 
 /* element section */
 @import url(../blocks/element/element.css);
