@@ -11,6 +11,7 @@
   transition: opacity .2s;
   -webkit-appearance: none;
   -moz-appearance: none;
+  margin: 0;
 }
 
 .profile__add-button:hover {
