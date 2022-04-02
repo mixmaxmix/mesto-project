@@ -9,6 +9,7 @@
   * hover эффекты
   * Воссоздание popup (пока без js)
   * Методология БЭМ
+  * JavaScript
   * Git
   * GitHub Pages
 
