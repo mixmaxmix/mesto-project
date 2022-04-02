@@ -1,6 +1,7 @@
 .element {
+  position: relative;
   width: 282px;
   background: #fff;
   border-radius: 10px;
+  cursor: pointer;
 }
-

@@ -23,58 +23,37 @@
       <button class="profile__add-button" title="Добавить фотографию" type="button"></button>
     </section>
     <section class="elements">
-      <ul class="elements__list">
-        <li class="element">
-          <img src="./images/posts-karachevsk.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Карачевск</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/posts-elbrus.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/posts-dombai.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/posts-elbrus.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__like element__like_active" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/posts-dombai.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Домбай</h2>
-            <button class="element__like element__like_active" type="button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img src="./images/posts-karachevsk.jpg" alt="Картинка элемента" class="element__photo">
-          <div class="element__info">
-            <h2 class="element__title">Карачаево Чтооооо</h2>
-            <button class="element__like element__like_active" type="button"></button>
-          </div>
-        </li>
-      </ul>
+      <ul class="elements__list"></ul>
     </section>
     <footer class="footer">
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup-with-image">
+      <div class="popup-with-image__container">
+        <button class="popup__close-button" type="button"></button>
+        <div class="popup-with-image__image-container">
+          <img class="popup-with-image__image">
+          <p class="popup-with-image__subtext"></p>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_type_add-element">
+      <div class="popup__container">
+        <button class="popup__close-button popup__close-button_type_add-element" type="button"></button>
+        <form class="popup__form popup__form_type_add-element" name="add_element">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" class="popup__input-field popup__input-field_type_name-mesto" name="element_name"
+                 placeholder="Название" required>
+          <input type="text" class="popup__input-field popup__input-field_type_url-link" name="url"
+                 placeholder="Ссылка на картинку" required>
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_edit-profile">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
-        <form class="popup__form" name="edit_profile">
+        <form class="popup__form popup__form_type_edit-profile" name="edit_profile">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input type="text" class="popup__input-field" name="name" placeholder="Ваше имя" value="Жак-Ив Кусто">
           <input type="text" class="popup__input-field" name="description" placeholder="Ваше описание" value="Исследователь океана">
@@ -83,5 +62,16 @@
       </div>
     </div>
   </main>
+  <template id="element">
+    <li class="element">
+      <button class="element__delete" type="button"></button>
+      <img class="element__photo">
+      <div class="element__info">
+        <h2 class="element__title"></h2>
+        <button class="element__like" type="button"></button>
+      </div>
+    </li>
+  </template>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
