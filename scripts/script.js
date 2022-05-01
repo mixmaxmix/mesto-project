@@ -61,7 +61,7 @@ function createElement(name, link) {
     openPopup(popupWithImage);
     popupImage.src = e.target.src;
     popupImage.alt = name;
-    popupSubtext.textContent = e.target.parentElement.querySelector('.element__title').textContent;
+    popupSubtext.textContent = name;
   });
 
   return elementElement;
@@ -78,31 +78,30 @@ function openPopup(popup) {
 
 // Функция закрытия попапа
 function closePopup(popup) {
-  popup.target.closest('.popup_opened').classList.remove('popup_opened');
+  popup.classList.remove('popup_opened');
 };
 
 // Изменение профиля
-function submitFormEditProfile(e) {
-  e.preventDefault();
+function submitFormEditProfile(popup) {
+  popup.preventDefault();
 
 
   profileName.textContent = popupInputNameProfile.value;
   profileDescription.textContent = popupInputDescriptionProfile.value;
-  closePopup(e)
+  closePopup(popup)
 }
 
 // Добавление элемента
-function submitFormAddElement(e) {
-  e.preventDefault();
+function submitFormAddElement(popup) {
+  popup.preventDefault();
 
   renderElement(createElement(popupElementInputAddName.value, popupElementInputAddUrl.value), elementsContainer);
   popupAddForm.reset();
-  closePopup(e)
+  closePopup(popup)
 }
 
 // Слушатели закрытие попапов
-popupCloseButtons.forEach(popupCloseButton => popupCloseButton.addEventListener('click', closePopup));
-
+popupCloseButtons.forEach(popupCloseButton => popupCloseButton.addEventListener('click', (event) => closePopup(event.target.closest('.popup'))));
 // Открытие попапов
 cardElementEditButton.addEventListener('click', () => {
 
@@ -114,12 +113,12 @@ cardElementEditButton.addEventListener('click', () => {
 
 cardElementButton.addEventListener('click', () => openPopup(popupAddElement));
 
-popupEditForm.addEventListener('submit', (e) => {
-  submitFormEditProfile(e)
+popupEditForm.addEventListener('submit', (popup) => {
+  submitFormEditProfile(popup)
 });
 
-popupAddForm.addEventListener('submit', (e) => {
-  submitFormAddElement(e)
+popupAddForm.addEventListener('submit', (popup) => {
+  submitFormAddElement(popup)
 });
 
 // Отображение карточек
